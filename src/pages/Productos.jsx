@@ -22,12 +22,19 @@ function Productos() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Productos</h1>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-        {productos.map((prod) => (
-          <ProductCard key={prod.id} producto={prod} />
-        ))}
+    <div style={{ background: "var(--color-fondo)", minHeight: "100vh", padding: "32px 0" }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", background: "var(--color-card)", borderRadius: 16, boxShadow: "0 4px 24px #22223b33", padding: 32 }}>
+        <h1 style={{ fontSize: 32, fontWeight: 700, color: "#e11d48", marginBottom: 24 }}>Productos</h1>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+          gap: "32px",
+          justifyContent: "center"
+        }}>
+          {productos.map((prod) => (
+            <ProductCard key={prod.id} producto={prod} />
+          ))}
+        </div>
       </div>
     </div>
   );
