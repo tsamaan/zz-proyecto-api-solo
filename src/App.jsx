@@ -10,6 +10,7 @@ import Carrito from './pages/Carrito';
 import Login from './pages/Login';
 import Registro from './pages/Registro';
 import Checkout from './pages/Checkout';
+import RutaProtegida from './components/RutaProtegida';
 import Error404 from './pages/Error404';
 
 function App() {
@@ -24,7 +25,11 @@ function App() {
         <Route path="/carrito" element={<Carrito />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registro" element={<Registro />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout" element={
+          <RutaProtegida>
+            <Checkout />
+          </RutaProtegida>
+        } />
         <Route path="*" element={<Error404 />} />
       </Routes>
       <Footer />
