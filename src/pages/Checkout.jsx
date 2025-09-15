@@ -38,7 +38,7 @@ function Checkout() {
   }
 
   return (
-    <div style={{ maxWidth: 500, margin: "2rem auto", border: "1px solid #ccc", padding: 24 }}>
+  <div style={{ maxWidth: 500, margin: "2rem auto", background: "var(--color-card)", borderRadius: 12, boxShadow: "0 2px 8px #e5e7eb", padding: 24 }}>
       <h1>Checkout</h1>
       <h3>Resumen de compra</h3>
       <ul>

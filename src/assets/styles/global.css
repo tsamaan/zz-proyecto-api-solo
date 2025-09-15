@@ -1,0 +1,30 @@
+@import url('./variables.css');
+body {
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 500;
+}
+nav {
+  background: var(--color-primario);
+  color: #fff;
+}
+button {
+  background: var(--color-secundario);
+  color: var(--color-primario);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #f59e0b;
+}

@@ -15,19 +15,20 @@ function Carrito() {
   }
 
   return (
-    <div>
-      <h1>Carrito</h1>
-      <ul>
+    <div style={{ maxWidth: 600, margin: "2rem auto", background: "var(--color-card)", borderRadius: 12, boxShadow: "0 2px 8px #e5e7eb", padding: 24 }}>
+      <h1 style={{ marginBottom: 24 }}>Carrito</h1>
+      <ul style={{ padding: 0, listStyle: "none" }}>
         {carrito.map((item) => (
-          <li key={item.id} style={{ marginBottom: 16 }}>
-            <b>{item.nombre}</b> x {item.cantidad} = ${item.precio * item.cantidad}
+          <li key={item.id} style={{ marginBottom: 16, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <span><b>{item.nombre}</b> x {item.cantidad}</span>
+            <span style={{ fontWeight: 700 }}>${item.precio * item.cantidad}</span>
             <button onClick={() => quitarDelCarrito(item.id)} style={{ marginLeft: 8 }}>
               Quitar
             </button>
           </li>
         ))}
       </ul>
-      <p><b>Total: ${total}</b></p>
+      <p style={{ fontWeight: 700, fontSize: 18 }}>Total: ${total}</p>
       <button onClick={vaciarCarrito}>Vaciar carrito</button>
     </div>
   );
