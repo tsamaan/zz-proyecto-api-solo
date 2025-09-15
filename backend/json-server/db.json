@@ -1,0 +1,41 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Remera básica",
+      "descripcion": "Remera de algodón unisex",
+      "precio": 6500,
+      "stock": 20,
+      "imagen": "remera1.jpg",
+      "categoria": "indumentaria"
+    },
+    {
+      "id": 2,
+      "nombre": "Campera deportiva",
+      "descripcion": "Campera impermeable con capucha",
+      "precio": 18500,
+      "stock": 10,
+      "imagen": "campera1.jpg",
+      "categoria": "indumentaria"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "email": "juan@mail.com",
+      "password": "1234"
+    }
+  ],
+  "ordenes": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "productos": [
+        { "productoId": 1, "cantidad": 2 }
+      ],
+      "total": 13000,
+      "fecha": "2025-09-15"
+    }
+  ]
+}
