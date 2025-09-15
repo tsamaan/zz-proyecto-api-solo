@@ -1,6 +1,8 @@
 
+
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useCarrito } from "../context/CarritoContext";
 
 function Detalle() {
   const { id } = useParams();
@@ -19,6 +21,9 @@ function Detalle() {
       .finally(() => setLoading(false));
   }, [id]);
 
+
+  const { agregarAlCarrito } = useCarrito();
+
   if (loading) return <p>Cargando detalle...</p>;
   if (error) return <p>Error: {error}</p>;
   if (!producto) return <p>No se encontró el producto.</p>;
@@ -35,6 +40,9 @@ function Detalle() {
       <p><b>Precio: ${producto.precio}</b></p>
       <p>Stock: {producto.stock}</p>
       <p>Categoría: {producto.categoria}</p>
+      <button onClick={() => agregarAlCarrito(producto, 1)}>
+        Agregar al carrito
+      </button>
     </div>
   );
 }
